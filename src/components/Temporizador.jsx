@@ -70,7 +70,6 @@ const Temporizador = () => {
       if (nuevoHoras >= 60) {
         nuevoHoras = 0;
         nuevoMinutos = 0;
-        alert("Tiempos excedidos");
       }
       return nuevoHoras * 3600 + nuevoMinutos * 60 + segundos;
     });

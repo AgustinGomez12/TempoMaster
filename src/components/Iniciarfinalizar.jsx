@@ -5,7 +5,9 @@ const Iniciarfinalizar = ({activarTempo,desactivarTempo,activado}) => {
 
   return (
     <div className="botones-inicoFinalizar">
-      <button onClick={activarTempo}>{activado === "Activado" ? "Pausar" : "Inciar"}</button>
+      <button style={{
+        background:activado === "Activado" ? "red" : ""
+      }} onClick={activarTempo}>{activado === "Activado" ? "Pausar" : "Inciar"}</button>
       <button onClick={desactivarTempo}>Finalizar</button>
     </div>
   );
