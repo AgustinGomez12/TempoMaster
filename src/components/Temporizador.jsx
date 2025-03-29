@@ -23,6 +23,10 @@ const Temporizador = () => {
   const [Desactivado, setDesactivado] = useState("")
   //Estado para los botenes de arranque y frenado
   
+ 
+  
+
+
   //funcion para que el contador no se negativo
   const numerosNegativosN0 = () => {
     if(horas == 0) {
@@ -42,8 +46,8 @@ const Temporizador = () => {
   //Funcion para añadir horas
   const añadirHoras = () => {
     setHoras((contador) => contador + 1);
-    if(horas == 60) {
-      setHoras(60)
+    if(horas >= 60) {
+      setHoras(0) 
     }
   };
   //Funcion para añadir horas
@@ -58,10 +62,16 @@ const Temporizador = () => {
   //Funcion para añadir minutos
   const añadirMinutos = () => {
     setMinutos((contador) => contador + 1);
-    if(minutos == 60) {
+    if(minutos === 60) {
       setMinutos(0)
-      setHoras(hora => hora + 1)
+      setHoras(hora => hora + 1)     
     }
+    
+    if(horas >= 60) {
+      setHoras(0)
+      alert("Tiempos exedidos")
+    }
+    
   };
   //Funcion para añadir minutos
 
@@ -75,7 +85,7 @@ const Temporizador = () => {
   //Funcion para añadir segundos
    const añadirSegundos = () => {
      setSegundos((contador) => contador + 1)
-     if(segundos == 60) {
+     if(segundos === 60) {
       setSegundos(0)
       setMinutos(minuto => minuto + 1)
      }
