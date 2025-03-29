@@ -2,7 +2,7 @@
 
 _Es un temporizador y para medir el tiempo de determinadas tareas, ademas es Reloj,Cronometro y muestra la hora.
 
-![Logo del proyecto](/tempo-app/assets/logo-tipo.png)
+![Logo del proyecto](/tempo-app/public/logo-tipo.png)
 
 ## Caracteristicas
 
