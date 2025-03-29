@@ -1,0 +1,39 @@
+@keyframes animacionCambioColor {
+    0%{
+        box-shadow: 0 0 10px violet;
+    }
+
+    30% {
+        box-shadow: 0 0 10px white;
+    }
+
+    60% {
+        box-shadow:  0 0 10px magenta;
+    }
+
+    100% {
+        box-shadow: 0 0 10px violet;
+    }
+}
+
+@keyframes cambioDeColorLetras {
+    0% {
+      color: limegreen;
+      rotate: 0deg;
+    }
+
+    50% {
+      color: lime;
+      rotate: 10deg;
+    }
+    90% {
+        color: lime;
+        rotate: -10deg;
+      }
+  
+
+    100% {
+        color: limegreen;
+        rotate: 0deg;
+    }
+}

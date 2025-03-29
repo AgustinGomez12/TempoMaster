@@ -1,0 +1,877 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  .pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+  .anton-sc-regular {
+    font-family: "Anton SC", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+/*Estilo predefido para que la nav del mobil no salga*/
+.navBarMobil {
+  display: none;
+}
+
+/*Estilo predefido para que la nav del mobil no salga*/
+
+@media (max-width: 700px) {
+
+  /* Estilos para celulares pequeños */
+  header {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, black, white, black);
+    width: 100%;
+    padding: 10px;
+    position: relative;
+
+    .containerLogo {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .containerImg {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        width: 500px;
+        height: 100%;
+
+
+        img {
+          width: 250px;
+          height: 250px;
+        }
+      }
+    }
+
+    .containerTitulo {
+      display: flex;
+      justify-content: center;
+      color: aliceblue;
+      font-size: 30px;
+      font-family: "Pacifico", cursive;
+      font-weight: 400;
+      font-style: normal;
+      text-shadow: 0 0 10px rgba(245, 245, 245, 0.634);
+    }
+
+    .navBar {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 100px;
+      margin-top: 20px;
+
+      ul {
+        display: none;
+      }
+
+      .container-menuBurger {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.574);
+          box-shadow: 0 0 10px white;
+        }
+
+        .lineas {
+          background-color: aliceblue;
+          width: 100%;
+          height: 14px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px;
+        }
+      }
+    }
+
+    
+
+  }
+  .navBarMobil {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    bottom: -300px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0.589),rgba(128, 128, 128, 0.685),rgba(255, 255, 255, 0.76));
+    z-index: 2;
+    text-decoration: none;
+    transition: 5s;
+    overflow: hidden;
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 0;
+      overflow: hidden;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 30px;
+      list-style: none;
+      font-family: "Pacifico", cursive;
+      font-weight: 400;
+      font-style: normal;
+      transition: 3s;
+      li {
+        display: flex;
+        justify-content: center;
+        border-radius: 20px;
+        width: 300px;
+
+        &:hover {
+          background: linear-gradient(90deg,lime,limegreen);
+          box-shadow: 0 0 100px lime;
+        }
+      }
+
+      a {
+        color: aliceblue;
+        &:hover {
+          color: violet;
+          text-shadow: 0 0 100px violet;
+        }
+      }
+    }
+  }
+
+  main {
+    display: flex;
+    background: linear-gradient(90deg, black, rgb(157, 155, 155));
+    height: 120vh;
+    flex-direction: column;
+
+    .Temporizador {
+      display: flex;
+      gap: 30px;
+      flex-direction: column;
+      z-index: 1;
+      margin-top: 80px;
+
+
+      h2 {
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        color: aliceblue;
+        text-shadow: 0 0 20px black;
+      }
+
+      .container-temporizador {
+        width: 100%;
+        height: 100%;
+
+
+        .container-imputsNunbers {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+          width: 100%;
+          height: 200px;
+
+          input {
+            width: 100px;
+            height: 100px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 0 10px;
+            background-color: aliceblue;
+            font-size: 40px;
+            padding-left: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          }
+
+          h3 {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            font-size: 25px;
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+            color: aliceblue;
+            text-shadow: 0 0 12px black;
+          }
+
+          .bontainer-but {
+            display: flex;
+            justify-content: space-around;
+            gap: 3px;
+
+            button {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 50px;
+              height: 50px;
+              font-family: "Pacifico", cursive;
+              font-weight: 400;
+              font-style: normal;
+              font-size: 25px;
+              border: none;
+              border-radius: 10px;
+
+              &:hover {
+                background-color: limegreen;
+                box-shadow: 0 0 10px green;
+                color: violet;
+                text-shadow: 0 0 10px;
+              }
+            }
+          }
+
+        }
+      }
+
+      .container-songs {
+        display: flex;
+        justify-content: center;
+        height: 100px;
+
+        .songs {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          font-family: "Pacifico", cursive;
+          font-weight: 400;
+          font-style: normal;
+          color: aliceblue;
+          font-size: 18px;
+          text-shadow: 0 0 10px black;
+
+          .song {
+            display: flex;
+            gap: 8px;
+
+            input {
+              width: 30px;
+            }
+          }
+        }
+      }
+
+      .botones-inicoFinalizar {
+        display: flex;
+        justify-content: space-around;
+
+        button {
+          font-family: "Pacifico", cursive;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 30px;
+          width: 130px;
+          height: 100px;
+          border: none;
+          border-radius: 20px;
+          box-shadow: 0 0 10px;
+
+          &:hover {
+            background: linear-gradient(90deg, lime, limegreen);
+            color: black;
+            color: aliceblue;
+            text-shadow: 0 0 10px white;
+
+          }
+        }
+      }
+
+      .container-opciones {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .opciones {
+          display: flex;
+
+          justify-content: space-around;
+          font-family: "Pacifico", cursive;
+          font-weight: 400;
+          font-style: normal;
+
+          h3 {
+            display: flex;
+            color: aliceblue;
+            text-shadow: 0 0 10px black;
+            font-size: 20px;
+          }
+
+          p {
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+            color: aliceblue;
+            text-shadow: 0 0 10px black;
+
+            &:hover {
+              animation: cambioDeColorLetras 3s infinite;
+            }
+          }
+        }
+      }
+    }
+
+    .publicidad {
+      margin-top: 100px;
+      width: 100%;
+      height: 100px;
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(180deg, black, grey, black);
+
+    .containerTextoFooter {
+      font-family: "Pacifico", cursive;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 20px;
+      color: aliceblue;
+      text-shadow: 0 0 10px whitesmoke;
+
+      h3 {
+        display: flex;
+        justify-content: center;
+
+      }
+    }
+  }
+
+}
+
+
+
+@media(min-width: 701px) {
+
+
+
+  header {
+    display: flex;
+    background: linear-gradient(180deg, black, white, black);
+    position: relative;
+
+    .containerLogo {
+      display: flex;
+      width: 300px;
+      height: 100%;
+
+      .containerImg {
+        display: flex;
+        width: 250px;
+        height: 250px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .containerTitulo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-family: "Pacifico", cursive;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 30px;
+      color: aliceblue;
+      text-shadow: 0 0 10px black;
+    }
+
+    .navBar {
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      bottom: -100px;
+      background-color: black;
+
+      .container-menuBurger {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        li {
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+          list-style: none;
+        }
+
+        a {
+          text-decoration: none;
+          font-size: 30px;
+          color: aliceblue;
+          font-family: "Anton SC", serif;
+          font-weight: 400;
+          font-style: normal;
+
+          &:hover {
+            color: violet;
+            text-shadow: 0 0 10px violet;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  main {
+    display: flex;
+    background: linear-gradient(90deg, black, rgb(157, 155, 155));
+    width: 100%;
+    height: 170vh;
+
+    .Temporizador {
+      width: 100%;
+      padding-top: 200px;
+
+      h2 {
+        display: flex;
+        justify-content: center;
+        font-size: 80px;
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        color: aliceblue;
+        text-shadow: 0 0 10px black;
+      }
+
+      .container-songs {
+        display: flex;
+
+        .songs {
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+
+          .song {
+            display: flex;
+            gap: 20px;
+            font-size: 30px;
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+            color: aliceblue;
+            text-shadow: 0 0 10px black;
+          }
+
+          input {
+            width: 30px;
+
+          }
+        }
+      }
+
+      .container-temporizador {
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+
+        .container-imputsNunbers {
+          background: linear-gradient(90deg, rgba(173, 169, 169, 0.767), rgba(0, 0, 0, 0.856));
+          display: flex;
+          justify-content: center;
+          padding-top: 50px;
+          width: 700px;
+          height: 400px;
+          animation: 5s animacionCambioColor infinite;
+          gap: 30px;
+          border-radius: 30px;
+
+          input {
+            width: 130px;
+            height: 100px;
+            border: none;
+            background-color: aliceblue;
+            border-radius: 10px;
+            font-size: 40px;
+            padding-left: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          }
+
+          h3 {
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+            font-size: 30px;
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+            color: aliceblue;
+            text-shadow: 0 0 10px black;
+          }
+
+          .bontainer-but {
+
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+
+            button {
+              width: 50px;
+              height: 50px;
+              border-radius: 10px;
+              border: none;
+              font-size: 30px;
+              font-family: "Pacifico", cursive;
+              font-weight: 400;
+              font-style: normal;
+
+              &:hover {
+                color: violet;
+                text-shadow: 0 0 10px violet;
+                background-color: limegreen;
+                box-shadow: 0 0 10px limegreen;
+              }
+            }
+          }
+        }
+      }
+
+      .container-opciones {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .opciones {
+          display: flex;
+          justify-content: space-around;
+          font-family: "Pacifico", cursive;
+          font-weight: 400;
+          font-style: normal;
+          cursor: pointer;
+
+          h3 {
+            display: flex;
+            color: aliceblue;
+            text-shadow: 0 0 10px black;
+            font-size: 30px;
+          }
+
+          p {
+            display: flex;
+            justify-content: center;
+            font-size: 35px;
+            color: aliceblue;
+            text-shadow: 0 0 10px black;
+
+            &:hover {
+              animation: cambioDeColorLetras 3s infinite;
+            }
+          }
+        }
+      }
+
+      .botones-inicoFinalizar {
+        display: flex;
+        justify-content: space-around;
+
+        button {
+          width: 200px;
+          height: 100px;
+          font-size: 35px;
+          font-family: "Pacifico", cursive;
+          font-weight: 400;
+          font-style: normal;
+          color: aliceblue;
+          border: none;
+          border-radius: 20px;
+          box-shadow: 0 0 10px black;
+          color: black;
+
+          &:hover {
+            background: linear-gradient(90deg, lime, limegreen);
+            color: aliceblue;
+            text-shadow: 0 0 10px aliceblue;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, black, white, black);
+    height: 250px;
+
+    .containerTextoFooter {
+      h2 {
+        display: flex;
+        justify-content: center;
+      }
+
+      h3 {
+        display: flex;
+        justify-content: center;
+      }
+
+      font-size: 35px;
+      font-family: "Pacifico",
+      cursive;
+      font-weight: 400;
+      font-style: normal;
+      color: aliceblue;
+      text-shadow:0 0 10px black;
+    }
+  }
+}
+
+@media (min-width:1300px) {
+
+  header {
+    display: flex;
+    background: linear-gradient(180deg, black, white, black);
+    position: relative;
+
+    .containerLogo {
+      display: flex;
+      width: 300px;
+      height: 100%;
+      padding-left: 30px;
+
+      .containerImg {
+        display: flex;
+        width: 400x;
+        height: 400px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .containerTitulo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-family: "Pacifico", cursive;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 70px;
+      color: aliceblue;
+      text-shadow: 0 0 10px black;
+    }
+
+    .navBar {
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      bottom: -100px;
+      background-color: black;
+
+      .container-menuBurger {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        li {
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+          list-style: none;
+        }
+
+        a {
+          text-decoration: none;
+          font-size: 40px;
+          color: aliceblue;
+          font-family: "Anton SC", serif;
+          font-weight: 400;
+          font-style: normal;
+
+          &:hover {
+            color: violet;
+            text-shadow: 0 0 10px violet;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  main {
+    display: flex;
+    background: linear-gradient(90deg, black, rgb(157, 155, 155));
+    width: 100%;
+    height: 190vh;
+
+    .Temporizador {
+      width: 100%;
+      padding-top: 200px;
+
+      h2 {
+        display: flex;
+        justify-content: center;
+        font-size: 80px;
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        color: aliceblue;
+        text-shadow: 0 0 10px black;
+      }
+
+      .container-songs {
+        display: flex;
+
+        .songs {
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+
+          .song {
+            display: flex;
+            gap: 20px;
+            font-size: 30px;
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+            color: aliceblue;
+            text-shadow: 0 0 10px black;
+          }
+
+          input {
+            width: 30px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .container-temporizador {
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+
+        .container-imputsNunbers {
+          background: linear-gradient(90deg, rgba(173, 169, 169, 0.767), rgba(0, 0, 0, 0.856));
+          display: flex;
+          justify-content: center;
+          padding-top: 50px;
+          width: 1000px;
+          height: 500px;
+          animation: 5s animacionCambioColor infinite;
+          gap: 30px;
+          border-radius: 30px;
+
+          input {
+            width: 200px;
+            height: 150px;
+            border: none;
+            background-color: aliceblue;
+            border-radius: 10px;
+
+          }
+
+          h3 {
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+            font-size: 40px;
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+            color: aliceblue;
+            text-shadow: 0 0 10px black;
+          }
+
+          .bontainer-but {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+
+            button {
+              width: 100px;
+              height: 100px;
+              border-radius: 10px;
+              border: none;
+              font-size: 60px;
+              font-family: "Pacifico", cursive;
+              font-weight: 400;
+              font-style: normal;
+
+              &:hover {
+                color: violet;
+                text-shadow: 0 0 10px violet;
+                background-color: limegreen;
+                box-shadow: 0 0 10px limegreen;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      .botones-inicoFinalizar {
+        display: flex;
+        justify-content: space-around;
+
+        button {
+          width: 250px;
+          height: 150px;
+          font-size: 50px;
+          font-family: "Pacifico", cursive;
+          font-weight: 400;
+          font-style: normal;
+          color: aliceblue;
+          border: none;
+          border-radius: 20px;
+          box-shadow: 0 0 10px black;
+          color: black;
+          cursor: pointer;
+
+          &:hover {
+            background: linear-gradient(90deg, lime, limegreen);
+            color: aliceblue;
+            text-shadow: 0 0 10px aliceblue;
+          }
+        }
+      }
+    }
+  }
+
+}
