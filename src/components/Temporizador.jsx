@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Sonidos from "./Sonidos";
 import Iniciarfinalizar from "./Iniciarfinalizar";
 import Opciones from "./Opciones";
+import alarma from "../assets/sounds/boxing-bell-1-232450.mp3"
 
 const Temporizador = () => {
   // Estado del tiempo en segundos
@@ -10,6 +11,18 @@ const Temporizador = () => {
   const [activado, setAtivado] = useState("Desactivado");
   const intervaloRef = useRef(null);
 
+  //Estado para controlar el display de los botones.
+  const [cambioDeDisplay,setCambioDeDisplay] = useState("flex")
+
+  //Estado para almacenar cheked del los box
+  const [chekedd,setCheked] = useState(null)
+
+  //Constante para sonidos
+  const alarmaRef = useRef(null)
+
+  //Refericia para quitar el sonido
+  const buttonClear = useRef("none")
+  
   // Función auxiliar para convertir el total de segundos a horas, minutos y segundos
   const getTimeParts = (total) => {
     const horas = Math.floor(total / 3600);
@@ -135,16 +148,79 @@ const Temporizador = () => {
   // Derivar las partes del tiempo a mostrar (horas, minutos, segundos)
   const { horas, minutos, segundos } = getTimeParts(timeLeft);
 
+
+  // Hacer que los botenes de aumento desaparezcan cuando se le de ativado
+  useEffect(()=> {
+    if(activado === "Activado") {
+      setCambioDeDisplay("none")
+    }else{
+      setCambioDeDisplay("flex")
+    }
+  },[activado])
+
+//Funcion para que los chekbox se seleccionen uno a la vez
+  const handleCheked = (option) => {
+    if(chekedd === option){
+      setCheked(null)
+    }else{
+      setCheked(option)
+    }
+  }
+
+  //Funciones para reproducir los audios
+  const playAlarma =()=> {
+    if(!alarmaRef.current){
+      alarmaRef.current = new Audio(alarma)
+    }
+    alarmaRef.current
+    .play()
+    .catch((error)=>
+    console.error("Error",error)
+    )
+  } 
+
+
+//Effecto para asignar song elegido
+useEffect(()=> {
+  
+switch (chekedd) {
+  case "option1" :
+   if(activado === "Activado"){
+
+   }else{
+      playAlarma()
+   
+   }
+    break;
+  case "option2":
+  
+    break;
+  case"option3":
+
+  break;  
+  default:
+    break;
+}
+
+
+},[activado,chekedd])  
+
+//Fucion para desactivar el sonido
+const quitarSong = () => {
+  buttonClear.current = "none"
+  console.log(buttonClear.current)
+}
+
   return (
     <div className="Temporizador">
       <h2>Temporizador</h2>
-      <Sonidos />
+      <Sonidos chekedd={chekedd} handleCheked={handleCheked} />
       <div className="container-temporizador">
         <div className="container-imputsNunbers">
           <div>
             <input type="number" disabled value={horas} />
             <h3>Horas</h3>
-            <div className="bontainer-but">
+            <div style={{display: cambioDeDisplay }} className="bontainer-but">
               <button aria-label="Añadir una hora" onClick={añadirHoras}>
                 +
               </button>
@@ -156,7 +232,7 @@ const Temporizador = () => {
           <div>
             <input type="number" disabled value={minutos} />
             <h3>Minutos</h3>
-            <div className="bontainer-but">
+            <div style={{display: cambioDeDisplay}} className="bontainer-but">
               <button
                 aria-label="Añadir un minuto"
                 onClick={añadirMinutos}
@@ -174,7 +250,7 @@ const Temporizador = () => {
           <div>
             <input type="number" disabled value={segundos} />
             <h3>Segundos</h3>
-            <div className="bontainer-but">
+            <div style={{ display: cambioDeDisplay }} className="bontainer-but">
               <button
                 aria-label="Añadir un segundo"
                 onClick={añadirSegundos}
@@ -196,6 +272,9 @@ const Temporizador = () => {
         activarTempo={toggleTempo}
         desactivarTempo={finalizarTempo}
       />
+      <button onClick={quitarSong} style={{display:buttonClear.current}}>
+        Quitar song
+      </button>
       <Opciones setTimeLeft={setTimeLeft} />
     </div>
   );
