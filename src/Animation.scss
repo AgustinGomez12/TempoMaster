@@ -37,3 +37,22 @@
         rotate: 0deg;
     }
 }
+
+@keyframes cambioDeColorBotonParar {
+    0% {
+
+    }
+
+    30% {
+        background-color: red;
+    }
+
+    60% {
+        background-color: lime;
+    }
+
+    100% {
+        
+    }
+
+}

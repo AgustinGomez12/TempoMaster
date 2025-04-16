@@ -619,6 +619,11 @@
             text-shadow: 0 0 10px aliceblue;
           }
         }
+        
+        .botonStopSong {
+          animation: cambioDeColorBotonParar 2s ease-in-out infinite;
+        }
+
       }
     }
   }

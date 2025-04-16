@@ -17,11 +17,12 @@ const Temporizador = () => {
   //Estado para almacenar cheked del los box
   const [chekedd,setCheked] = useState(null)
 
+  //Estado del boton para frenar las alarmas
+  const [frenar,setFrenar] = useState("none")
+
   //Constante para sonidos
   const alarmaRef = useRef(null)
 
-  //Refericia para quitar el sonido
-  const buttonClear = useRef("none")
   
   // Función auxiliar para convertir el total de segundos a horas, minutos y segundos
   const getTimeParts = (total) => {
@@ -171,8 +172,9 @@ const Temporizador = () => {
   const playAlarma =()=> {
     if(!alarmaRef.current){
       alarmaRef.current = new Audio(alarma)
+      
     }
-    alarmaRef.current
+    alarmaRef.current 
     .play()
     .catch((error)=>
     console.error("Error",error)
@@ -185,11 +187,10 @@ useEffect(()=> {
   
 switch (chekedd) {
   case "option1" :
-   if(activado === "Activado"){
-
-   }else{
-      playAlarma()
-   
+   if(timeLeft === 0){
+    playAlarma()
+    setFrenar("flex")
+    alarmaRef.current.loop = true
    }
     break;
   case "option2":
@@ -206,9 +207,9 @@ switch (chekedd) {
 },[activado,chekedd])  
 
 //Fucion para desactivar el sonido
-const quitarSong = () => {
-  buttonClear.current = "none"
-  console.log(buttonClear.current)
+const desactivarSonido = () => {
+  alarmaRef.current.loop = false
+  
 }
 
   return (
@@ -268,13 +269,13 @@ const quitarSong = () => {
         </div>
       </div> 
       <Iniciarfinalizar
+        frenar={frenar}
+        desactivarSonido={desactivarSonido}
         activado={activado}
         activarTempo={toggleTempo}
         desactivarTempo={finalizarTempo}
       />
-      <button onClick={quitarSong} style={{display:buttonClear.current}}>
-        Quitar song
-      </button>
+   
       <Opciones setTimeLeft={setTimeLeft} />
     </div>
   );
